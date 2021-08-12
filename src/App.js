@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import TodoItem from "./TodoItem";
+import AddTodoForm from "./AddTodoForm";
+import EditForm from "./EditForm";
 import "./index.css";
-
 
 function App() {
 
@@ -31,7 +33,7 @@ function App() {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     if(todo !== ""){
-      setTodos([ ...todos, { id: todos.length + 1, text: todo.trim() }]);
+      setTodos([ ...todos, { id: new Date(), text: todo.trim() }]);
     }
     setTodo("");
   }
@@ -57,41 +59,27 @@ function App() {
   return (
     <div className="App">
       { isEditing ? (
-        <form onSubmit={handleEditFormSubmit}>
-          <h2>Edit ToDo</h2>
-          <label htmlFor="editTodo">Edit Todo: </label>
-          <input 
-            name="editTodo"
-            type="text"
-            placeholder="Edit todo"
-            value={currentTodo.text}
-            onChange={handleEditInputChange}
-          />
-          <button type="submit">Update</button>
-          <button onClick={() => setIsEditing(false)}>Cancel</button>
-      </form>
+        <EditForm 
+          currentTodo={currentTodo}
+          setIsEditing={setIsEditing}
+          onEditFormSubmit={handleEditFormSubmit}
+          onEditInputChange={handleEditInputChange}
+        />
       ) : (
-        <form onSubmit={handleFormSubmit}>
-          <h2>Add ToDo</h2>
-          <label htmlFor="todo">Add Todo: </label>
-          <input 
-            name="todo"
-            type="text"
-            placeholder="Create a new todo"
-            value={todo}
-            onChange={handleInputChange}
-          />
-          <button type="submit">Add</button>
-        </form>
+        <AddTodoForm 
+          todo={todo}
+          onAddFormSubmit={handleFormSubmit}
+          onAddInputChange={handleInputChange}
+        />
       )}
 
       <ul className="todo-list">
         {todos.map((todo) => (
-          <li key={todo.id}>
-            {todo.text}
-            <button onClick={() => handleEditClick(todo)}>Edit</button>
-            <button onClick={() => handleDeleteClick(todo.id)}>Delete</button>
-          </li>
+          <TodoItem 
+            todo={todo}
+            onEditClick={handleEditClick}
+            onDeleteClick={handleDeleteClick}
+          />
         ))}
       </ul>
 
