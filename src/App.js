@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Navbar from "./Navbar";
 import TodoItem from "./TodoItem";
 import AddTodoForm from "./AddTodoForm";
 import EditForm from "./EditForm";
@@ -6,7 +7,10 @@ import "./index.css";
 
 function App() {
 
-  const [todos, setTodos] = useState(() => {
+  const [todos, setTodos] = useState([
+      { "id": "2021-08-13T01:18:00.241Z", "text": "Default todo" },
+      { "id": "2021-08-13T01:18:01.241Z", "text": "todo sample, try to add your own todo" }
+    ], () => {
     let savedTodos = localStorage.getItem("todos")
     if (savedTodos) {
       return JSON.parse(savedTodos);
@@ -58,6 +62,8 @@ function App() {
 
   return (
     <div className="App">
+      <Navbar />
+      <p className="greeting">Welcome, <br />let's Do the best !</p>
       { isEditing ? (
         <EditForm 
           currentTodo={currentTodo}
@@ -66,22 +72,28 @@ function App() {
           onEditInputChange={handleEditInputChange}
         />
       ) : (
-        <AddTodoForm 
-          todo={todo}
-          onAddFormSubmit={handleFormSubmit}
-          onAddInputChange={handleInputChange}
-        />
-      )}
-
-      <ul className="todo-list">
-        {todos.map((todo) => (
-          <TodoItem 
+        <>
+          <AddTodoForm 
             todo={todo}
-            onEditClick={handleEditClick}
-            onDeleteClick={handleDeleteClick}
+            onAddFormSubmit={handleFormSubmit}
+            onAddInputChange={handleInputChange}
           />
-        ))}
-      </ul>
+          <h2 className="todo-list-title">Todo List : </h2>
+          <ul className="todo-list">
+            {todos.map((todo) => (
+              <TodoItem 
+                todo={todo}
+                onEditClick={handleEditClick}
+                onDeleteClick={handleDeleteClick}
+              />
+            ))}
+          </ul>
+        </>
+      )}
+      <footer>
+        <p>Go to</p>
+        <a href="/">Daniel Sandoval Portfolio</a>
+      </footer>
 
     </div>
   );
