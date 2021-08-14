@@ -4,12 +4,12 @@
 body {
   margin: 0;
   font-family: "sen";
+  background: #15151D;
   color: #ffffff;
 }
 
 .App {
   min-height: 100vh;
-  background: #15151D;
   text-align: center;
 }
 .navbar {
@@ -71,21 +71,18 @@ form {
   grid-row-gap: 10px; */
   margin: 0 auto;
   margin-top: 80px;
-  max-width: 750px;
-  /* border: 1px solid fuchsia; */
+  max-width: 550px;
 }
-
 form label {
   grid-area: 1 / 1 / 2 / 2;
   margin-left: 10px;
   text-align: left;
   font-size: 30px;
   line-height: 36px;
-  /* border: 1px solid red; */
 }
 form input {
   grid-area: 2 / 1 / 3 / 2;
-  width: 700px;
+  max-width: 500px;
   height: 44px;
   padding: 0 20px;
   background: #1d1d28;
@@ -109,19 +106,16 @@ form input:focus {
   width: 10px;
   height: 10px;
   margin-top: 10px;
-  margin-left: 10px;
   background: transparent;
   border: transparent;
-  /* border: 1px solid red; */
 }
 form button img {
   grid-area: 2 / 2 / 3 / 3;
   width: 40px;
   height: 40px;
   margin-top: -8px;
-  margin-left: -10px;
+  margin-left: -14px;
   cursor: pointer;
-  /* border: 1px solid red; */
 }
 .decoration {
   grid-area: 2 / 1 / 3 / 2 ;
@@ -137,7 +131,7 @@ form button img {
   margin-top: 80px;
   padding-left: 10px;
   margin-bottom: -3px;
-  max-width: 750px;
+  max-width: 550px;
   text-align: left;
   font-size: 30px;
   line-height: 36px;
@@ -151,7 +145,7 @@ form button img {
   height: 42px;
   background: #1d1d28;
   color: #ffffff;
-  max-width: 750px;
+  max-width: 550px;
   margin: 0 auto;
   box-sizing: border-box;
   border-style: solid;
@@ -187,7 +181,6 @@ form button img {
   margin-left: 10px;
   background: transparent;
   border: transparent;
-  /* border: 1px solid yellow; */
 }
 .decoration-2 {
   grid-area: 1 / 1 / 2 / 2 ;
@@ -199,18 +192,19 @@ form button img {
   font-style: bold;
   color: #617FDE;
 }
-.edit-button {
-  grid-area: 1 / 2 / 2 / 3;
-}
-.delete-button {
-  grid-area: 1 / 3 / 2 / 4;
-}
 .todo-preview button img {
-  width: 28px;
-  height: 28px;
-  margin-top: -8px;
+  width: 22px;
+  height: 22px;
+  margin-top: -2px;
   margin-left: -10px;
   cursor: pointer;
+}
+.edit-button { /* no worksss ? */
+  grid-area: 1 / 2 / 2 / 3;
+  border: 1px solid fuchsia;
+}
+.delete-button { /* no worksss ? */
+  grid-area: 1 / 3 / 2 / 4;
 }
 /* .edit-button img {
   grid-area: 1 / 2 / 2 / 3;
@@ -222,7 +216,7 @@ form button img {
   grid-template-columns: 14fr repeat(2, 1fr);
 }
 .edit-form input {
-  width: 650px;
+  max-width: 450px;
 }
 .edit-form button {
   align-items: center; /* text into button centered*/
@@ -233,22 +227,21 @@ form button img {
   background: transparent;
   border: transparent;
 }
-.update {
+.update { /* no worksss ? */
   grid-area: 2 / 2 / 3 / 3;
-  margin-left: 18px;
 }
-.cancel {
+.cancel { /* no worksss ? */
   grid-area: 2 / 3 / 3 / 4;
-  margin-left: 18px;
+  border: 1px solid fuchsia;
 }
 .update img {
   margin-top: -10px;
-  margin-left: -21px;
-
+  margin-left: -26px;
+  /* opacity: 0.5; */
 }
 .cancel img {
   margin-top: -10px;
-  margin-left: -18px;
+  margin-left: -12px;
 }
 footer {
   height: 200px;
@@ -257,7 +250,6 @@ footer {
   flex-direction: row;
   justify-content: center;
   align-items: flex-end;
-  /* border: 1px solid yellow; */
 }
 footer p {
   margin-bottom: 30px;
@@ -267,4 +259,48 @@ footer a {
   margin-bottom: 30px;
   margin-left: 3px;
   color: rgba(255, 255, 255, 0.651);
+}
+/* border: 1px solid fuchsia; */
+@media only screen and (max-width: 569px) {
+  .greeting { 
+    font-size: 30px;
+  }
+  form {
+    width: 96%;
+    justify-content: center;
+  }
+  form input {
+    width: 94%;
+  }
+  form button img {
+    margin-left: -22px;
+  }
+  .todo-list-title {
+    margin-left: 8px;
+  }
+  .todo-item-wrapper {
+    width: 96%;
+  }
+  .todo-preview button {
+    margin-left: -3px;
+  }
+  .edit-form {
+    width: 96%;
+  }
+  .edit-form input {
+    width: 86%;
+  }
+  .edit-form button {
+    margin-left: -20px;
+  }
+  button .cancel {
+    border: 1px solid greenyellow;
+    margin-left: -20px;
+  }
+  .cancel img {
+    margin-left: 0px;
+  }
+  .update img {
+    margin-left: -24px;
+  }
 }

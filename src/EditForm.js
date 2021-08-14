@@ -11,7 +11,7 @@ const EditForm = ({ currentTodo, setIsEditing, onEditFormSubmit, onEditInputChan
         name="editTodo"
         type="text"
         placeholder="Edit todo"
-        maxLength="40"
+        maxLength="24"
         value={currentTodo.text}
         onChange={onEditInputChange}
       />

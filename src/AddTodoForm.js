@@ -9,7 +9,7 @@ const AddTodoForm = ({ todo, onAddFormSubmit, onAddInputChange }) => {
         name="todo"
         type="text"
         placeholder="Create a new todo"
-        maxLength="40"
+        maxLength="24"
         value={todo}
         onChange={onAddInputChange}
       />   
