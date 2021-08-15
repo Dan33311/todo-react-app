@@ -88,12 +88,12 @@ function App() {
               />
             ))}
           </ul>
+          <footer>
+            <p>Go to</p>
+            <a href="/">Daniel Sandoval Portfolio</a>
+          </footer>
         </>
       )}
-      <footer>
-        <p>Go to</p>
-        <a href="/">Daniel Sandoval Portfolio</a>
-      </footer>
 
     </div>
   );
