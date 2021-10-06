@@ -7,10 +7,7 @@ import "./index.css";
 
 function App() {
 
-  const [todos, setTodos] = useState([
-      { "id": "2021-08-13T01:18:00.241Z", "text": "Default todo (sample)" },
-      { "id": "2021-08-13T01:18:01.241Z", "text": "...try to add your own todo" }
-    ], () => {
+  const [todos, setTodos] = useState(() => {
     let savedTodos = localStorage.getItem("todos")
     if (savedTodos) {
       return JSON.parse(savedTodos);
@@ -78,7 +75,8 @@ function App() {
             onAddFormSubmit={handleFormSubmit}
             onAddInputChange={handleInputChange}
           />
-          <h2 className="todo-list-title">Todo List : </h2>
+          <h2 className="todo-list-title">{ todos[0] ? `Todo List :` : '' } </h2>
+          {/* <h2 className="todo-list-title">Todo List : </h2> */}
           <ul className="todo-list">
             {todos.map((todo) => (
               <TodoItem 

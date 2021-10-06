@@ -1,5 +1,5 @@
 import logo from "./images/logo.png";
-import avatar from "./images/female-avatar.png";
+import avatar from "./images/user.png";
 
 const Navbar = () => {
   return (  
@@ -13,5 +13,5 @@ const Navbar = () => {
     </div>
   );
 }
- 
+
 export default Navbar;
