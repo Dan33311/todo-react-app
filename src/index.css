@@ -64,48 +64,63 @@ body {
   /* border: 1px solid yellow; */
 }
 
-/* form {
+form {
   display: grid;
   grid-template-columns: 15fr 1fr;
   grid-template-rows: repeat(2, 1fr);
   margin: 0 auto;
   margin-top: 80px;
   max-width: 550px;
-} */
-.input-form {
+}
+/* .input-form {
   display: grid;
   grid-template-columns: 15fr 1fr;
   grid-template-rows: repeat(4, 1fr);
   margin: 0 auto;
   margin-top: 80px;
   max-width: 550px;
-}
+} */
 
-/* form label {
+form label {
+  grid-area: 1 / 1 / 2 / 2;
+  margin-left: 10px;
+  text-align: left;
+  font-size: 30px;
+  line-height: 36px;
+}
+/* .label-1 {
   grid-area: 1 / 1 / 2 / 2;
   margin-left: 10px;
   text-align: left;
   font-size: 30px;
   line-height: 36px;
 } */
-.label-1 {
-  grid-area: 1 / 1 / 2 / 2;
-  margin-left: 10px;
-  text-align: left;
-  font-size: 30px;
-  line-height: 36px;
-}
 
-.label-2 {
+/* .label-2 {
   grid-area: 3 / 1 / 4 / 2;
   margin-top: 10px;
   margin-left: 10px;
   text-align: left;
   font-size: 30px;
   line-height: 36px;
-}
+} */
 
-/* form input {
+form input {
+  grid-area: 2 / 1 / 3 / 2;
+  max-width: 500px;
+  height: 44px;
+  padding: 0 20px;
+  background: #1d1d28;
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 36px;
+  letter-spacing: 1px;
+  box-sizing: border-box;
+  border-style: solid;
+  border-color: transparent;
+  border-radius: 15px;
+}
+/* .input-1 {
   grid-area: 2 / 1 / 3 / 2;
   max-width: 500px;
   height: 44px;
@@ -120,22 +135,7 @@ body {
   border-color: transparent;
   border-radius: 15px;
 } */
-.input-1 {
-  grid-area: 2 / 1 / 3 / 2;
-  max-width: 500px;
-  height: 44px;
-  padding: 0 20px;
-  background: #1d1d28;
-  color: #ffffff;
-  font-size: 18px;
-  line-height: 36px;
-  letter-spacing: 1px;
-  box-sizing: border-box;
-  border-style: solid;
-  border-color: transparent;
-  border-radius: 15px;
-}
-.input-2 {
+/* .input-2 {
   grid-area: 4 / 1 / 5 / 2;
   max-width: 500px;
   height: 44px;
@@ -149,15 +149,15 @@ body {
   border-style: solid;
   border-color: transparent;
   border-radius: 15px;
-}
+} */
 
-/* form input:focus {
+form input:focus {
   border-style: inset;
   outline: none;
   border-width: 3px;
   border-color:  #f9bf138e;
-} */
-.input-1:focus {
+}
+/* .input-1:focus {
   border-style: inset;
   outline: none;
   border-width: 3px;
@@ -168,7 +168,7 @@ body {
   outline: none;
   border-width: 3px;
   border-color:  #f9bf138e;
-}
+} */
 
 .add-button {
   grid-area: 2 / 2 / 3 / 3;
@@ -178,16 +178,24 @@ body {
   background: transparent;
   border: transparent;
 }
-.add-button-2 {
+/* .add-button-2 {
   grid-area: 4 / 2 / 5 / 3;
   width: 10px;
   height: 10px;
   margin-top: 10px;
   background: transparent;
   border: transparent;
-}
+} */
 
-/* form button img {
+form button img {
+  grid-area: 2 / 2 / 3 / 3;
+  width: 40px;
+  height: 40px;
+  margin-top: -8px;
+  margin-left: -14px;
+  cursor: pointer;
+}
+/* .form-img-1 {
   grid-area: 2 / 2 / 3 / 3;
   width: 40px;
   height: 40px;
@@ -195,22 +203,14 @@ body {
   margin-left: -14px;
   cursor: pointer;
 } */
-.form-img-1 {
+/* .form-img-2 {
   grid-area: 2 / 2 / 3 / 3;
   width: 40px;
   height: 40px;
   margin-top: -8px;
   margin-left: -14px;
   cursor: pointer;
-}
-.form-img-2 {
-  grid-area: 2 / 2 / 3 / 3;
-  width: 40px;
-  height: 40px;
-  margin-top: -8px;
-  margin-left: -14px;
-  cursor: pointer;
-}
+} */
 
 .decoration {
   grid-area: 2 / 1 / 3 / 2 ;

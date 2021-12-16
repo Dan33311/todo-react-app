@@ -20,5 +20,5 @@ const EditForm = ({ currentTodo, setIsEditing, onEditFormSubmit, onEditInputChan
     </form>
   );
 }
- 
+
 export default EditForm;

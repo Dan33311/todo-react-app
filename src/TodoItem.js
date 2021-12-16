@@ -14,5 +14,5 @@ const TodoItem = ({ todo, onEditClick, onDeleteClick }) => {
     </div> 
   );
 }
- 
+
 export default TodoItem;
